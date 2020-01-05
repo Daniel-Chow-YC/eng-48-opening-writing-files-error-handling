@@ -22,17 +22,29 @@ When you handle your errors your code can continue to run
 
 ## Definitions
 
-### try:/ except:
+### try:/ except: / finally:
 These blocks of code are used in conjunction to error handling
 ````
 try:
     block of code
     block of code
-    except <exception> as <placeholder>:
+except <exception> as <placeholder>:
     block of code
     block of code
     print('Check file name &/or path - File cannot be found')
     print(<placeholder>)
+finally:
+    block that runs after
+
+### Using open() and with()
+When using open() you need to close the files you actually open!
+
+You can skip this step using 'with':
+````
+with open (<file>, <option>) as <placeholder>:
+    <placeholder>.readlines()
+````
+    
 
 ````
 ### Exceptions

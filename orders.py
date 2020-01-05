@@ -26,7 +26,21 @@ def open_print_close(file_name):
     finally:
         print('Program closing - execution done!')
 
-# open_print_txt_file('order.txt')
-# open_print_txt_file('order.txt')
-open_print_close('order.txt')
+def open_write_txt(file, item):
+    try:
+        with open(file, 'a') as file_to_write:
+            file_to_write.write(item + '\n')
+    except FileNotFoundError as error:
+        print('Check your file and the path')
+        print(error)
+    finally:
+        print('Program closing - execution done!')
 
+# open_print_txt_file('order.txt')
+# open_print_txt_file('order.txt')
+
+open_write_txt('order2.txt', 'cupcake')
+open_write_txt('order2.txt', 'OJ with carrot')
+open_write_txt('order2.txt', 'Eggs Benedict')
+open_write_txt('order2.txt', 'Beans on toast')
+open_print_close('order2.txt')
